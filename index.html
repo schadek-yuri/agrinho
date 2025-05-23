@@ -1,1 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Site Completo Profissional</title>
+  <style>
+    :root {
+      --primaria: #3498db;
+      --escura: #2c3e50;
+      --clara: #ecf0f1;
+      --fundo: #fdfdfd;
+      --texto: #2d3436;
+    }
 
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      --fundo: #181818;
+      --texto: #f5f5f5;
+    }
+
+    header {
+      background-color: var(--escura);
+      color: white;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url('https://via.placeholder.com/1400x400') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 1px 1px 5px black;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3em;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1 1 30%;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: var(--primaria);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--escura);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .social a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .dark-toggle {
+      background: none;
+      border: 2px solid white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Meu Super Site</h1>
+    <div>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+  </header>
+
+  <div class="hero">
+    <h2>Transforme sua presença digital</h2>
+  </div>
+
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Somos uma equipe apaixonada por tecnologia, design e soluções digitais modernas. Criamos sites, apps e experiências digitais com propósito e impacto real.</p>
+  </section>
+
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Web Design</h3>
+        <p>Criação de sites modernos, responsivos e acessíveis para qualquer dispositivo.</p>
+      </div>
+      <div class="card">
+        <h3>Desenvolvimento</h3>
+        <p>Soluções personalizadas em HTML, CSS, JS, React, APIs e muito mais.</p>
+      </div>
+      <div class="card">
+        <h3>Marketing Digital</h3>
+        <p>SEO, redes sociais, campanhas e estratégias digitais para atrair mais clientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfólio</h2>
+    <div class="grid gallery">
+      <img src="https://via.placeholder.com/400x250" alt="Projeto 1">
+      <img src="https://via.placeholder.com/400x250" alt="Projeto 2">
+      <img src="https://via.placeholder.com/400x250" alt="Projeto 3">
+    </div>
+  </section>
+
+  <section id="equipe">
+    <h2>Equipe</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>João Silva</h3>
+        <p>CEO e desenvolvedor full stack. Apaixonado por código e inovação.</p>
+      </div>
+      <div class="card">
+        <h3>Maria Costa</h3>
+        <p>Designer UI/UX. Adora transformar ideias em interfaces incríveis.</p>
+      </div>
+      <div class="card">
+        <h3>Lucas Nunes</h3>
+        <p>Marketing e SEO. Especialista em posicionar marcas na web.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="depoimentos">
+    <h2>O que dizem nossos clientes</h2>
+    <div class="grid">
+      <div class="card">
+        <p>"Excelente trabalho! Meu site ficou lindo e funcional!"</p>
+        <strong>– Ana P.</strong>
+      </div>
+      <div class="card">
+        <p>"A equipe entregou rápido e com qualidade. Recomendo!"</p>
+        <strong>– Ricardo M.</strong>
+      </div>
+      <div class="card">
+        <p>"Conseguimos dobrar nossos acessos em 2 meses. Obrigado!"</p>
+        <strong>– Carla T.</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <form onsubmit="enviarFormulario(event)">
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu e-mail" required>
+      <textarea rows="5" placeholder="Sua mensagem..." required></textarea>
+      <button type="submit">Enviar</button>
+      <p id="resposta"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SuperSite. Todos os direitos reservados.</p>
+    <div class="social">
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    function enviarFormulario(e) {
+      e.preventDefault();
+      document.getElementById("resposta").innerText = "Mensagem enviada com sucesso!";
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+
+</body>
+</html>
